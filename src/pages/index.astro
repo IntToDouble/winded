@@ -1,0 +1,212 @@
+---
+import github from "../assets/github.svg";
+import landscape from "../assets/landscape.svg";
+import multi from "../assets/multi.svg";
+import portrait from "../assets/portrait.svg";
+import single from "../assets/single.svg";
+import wind from "../assets/wind.svg";
+---
+
+<html>
+  <head>
+    <title>WINDED | Tailwind Breakpoint Mastery</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Tailwind Breakpoint Mastery" />
+  </head>
+  <body class="p-4">
+    <header
+      class="flex items-center justify-between gap-x-4 fixed w-full bg-white/95 -mt-4 -mx-4 py-2 px-2 border-b min-w-max"
+    >
+      <!-- LOGO/TITLE -->
+      <div>
+        <a href="/" class="flex justify-start items-center">
+          <img src={wind.src} alt="Winded" class="h-6 mr-1" />
+          <h1 class="text-2xl font-bold">WINDED</h1>
+        </a>
+      </div>
+      <!-- CONTROLS -->
+      <div class="flex grow gap-x-4">
+        <!-- TODO - REPLACE WITH PROD URL -->
+        <input
+          id="url-input"
+          type="text"
+          class="w-full max-w-lg rounded border py-1 px-2"
+          value="https://winded.vercel.app/test"
+        />
+        <div class="flex items-center">
+          <div id="breakpoint-buttons-container" class="text-xs uppercase flex">
+            <input
+              type="checkbox"
+              name="breakpoint"
+              id="sm"
+              value="sm"
+              class="hidden peer/sm"
+              checked
+            />
+            <label
+              for="sm"
+              class="rounded-l peer-checked/sm:bg-black peer-checked/sm:text-white"
+            >
+              sm
+            </label>
+
+            <input
+              type="checkbox"
+              name="breakpoint"
+              id="md"
+              value="md"
+              class="hidden peer/md"
+            />
+            <label
+              for="md"
+              class="peer-checked/md:bg-black peer-checked/md:text-white"
+            >
+              md
+            </label>
+
+            <input
+              type="checkbox"
+              name="breakpoint"
+              id="lg"
+              value="lg"
+              class="hidden peer/lg"
+            />
+            <label
+              for="lg"
+              class="peer-checked/lg:bg-black peer-checked/lg:text-white"
+            >
+              lg
+            </label>
+
+            <input
+              type="checkbox"
+              name="breakpoint"
+              id="xl"
+              value="xl"
+              class="hidden peer/xl"
+            />
+            <label
+              for="xl"
+              class="peer-checked/xl:bg-black peer-checked/xl:text-white"
+            >
+              xl
+            </label>
+
+            <input
+              type="checkbox"
+              name="breakpoint"
+              id="2xl"
+              value="2xl"
+              class="hidden peer/2xl"
+            />
+            <label
+              for="2xl"
+              class="rounded-r peer-checked/2xl:bg-black peer-checked/2xl:text-white"
+            >
+              2xl
+            </label>
+          </div>
+        </div>
+        <div class="flex justify-center items-center">
+          <label for="single-mode">
+            <input
+              id="single-mode"
+              type="radio"
+              name="mode"
+              value="single"
+              class="hidden peer"
+              checked
+            />
+            <img
+              src={single.src}
+              alt="Single"
+              class="rounded-l peer-checked:invert peer-checked:bg-white"
+            />
+          </label>
+          <label for="multi-mode">
+            <input
+              id="multi-mode"
+              type="radio"
+              name="mode"
+              value="multi"
+              class="hidden peer"
+            />
+            <img
+              src={multi.src}
+              alt="Multiple"
+              class="rounded-r peer-checked:invert peer-checked:bg-white"
+            />
+          </label>
+        </div>
+        <div class="flex items-center">
+          <!-- TODO - LABELS FOR CONTROLS? -->
+          <label for="portrait-mode">
+            <input
+              id="portrait-mode"
+              type="radio"
+              name="orientation"
+              value="portrait"
+              class="hidden peer"
+              checked
+            />
+            <img
+              src={portrait.src}
+              alt="Portrait"
+              class="rounded-l peer-checked:invert peer-checked:bg-white"
+            />
+          </label>
+          <label for="landscape-mode">
+            <input
+              id="landscape-mode"
+              type="radio"
+              name="orientation"
+              value="landscape"
+              class="hidden peer"
+            />
+            <img
+              src={landscape.src}
+              alt="Landscape"
+              class="rounded-r peer-checked:invert peer-checked:bg-white"
+            />
+          </label>
+        </div>
+        <!-- TODO - SCROLL SYNC -->
+        <!-- TODO - SCALE -->
+      </div>
+      <a href="https://github.com/IntToDouble/winded">
+        <img src={github.src} alt="Github" class="h-6" />
+      </a>
+    </header>
+    <div
+      id="panes-container"
+      class="flex w-full flex-wrap justify-center gap-x-8 gap-y-8 p-8"
+    >
+    </div>
+    <footer
+      class="flex justify-between mt-1.5 text-[0.6rem] font-mono text-gray-400 -mb-2"
+    >
+      <div class="w-1/4">
+        <a href="https://www.inttodouble.com/"> IntToDouble</a>
+      </div>
+    </footer>
+    <script src="../scripts/magic.js"></script>
+  </body>
+</html>
+<style is:global>
+  #breakpoint-buttons-container label {
+    @apply inline-block border text-xs px-1.5 py-0.5 font-mono lowercase;
+  }
+
+  input[type="radio"] + img {
+    @apply h-6 min-w-max p-1 border;
+  }
+
+  .breakpoint-container {
+    @apply rounded p-2;
+  }
+
+  .breakpoint-container iframe {
+    @apply w-full outline rounded outline-gray-200 outline-1;
+  }
+</style>

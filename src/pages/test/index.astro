@@ -1,0 +1,82 @@
+---
+import favicon from "../../assets/favicon.svg";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Winded Test</title>
+  </head>
+  <body class="p-4 max-w-md mx-auto">
+    <header class="flex items-center mb-4">
+      <img src={favicon.src} class="h-8" />
+      <h1 class="text-4xl font-bold">WINDED</h1>
+    </header>
+    <main class="test text-sm">
+      <!-- TODO - HAVE CHROME DEBUGGER SIZE EXPORTS FOR DOWNLOAD? -->
+      <p>Reduce the time you spend testing responsive designs with Tailwind.</p>
+      <div>
+        <h2>Resolution</h2>
+        <h1 id="resolution">$RESOLUTION</h1>
+      </div>
+      <div>
+        <h2>Visible Breakpoints</h2>
+        <div class="flex breakpoint-test">
+          <!-- <div>&le; sm</div> -->
+          <div class="hidden sm:block">sm</div>
+          <div class="hidden md:block">md</div>
+          <div class="hidden lg:block">lg</div>
+          <div class="hidden xl:block">xl</div>
+          <div class="hidden 2xl:block">2xl</div>
+        </div>
+      </div>
+      <div>
+        <h2>USAGE</h2>
+        <p>
+          Use the URL input field to enter the URL of the webpage you want to
+          view.
+        </p>
+        <br />
+        <p>
+          Breakpoints, viewing mode, and orientation can all be adjusted by the
+          buttons to the right.
+        </p>
+      </div>
+      <div>
+        <h2>Troubleshooting</h2>
+        <p>
+          If the page fails to load, make sure the
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options"
+            class="underline font-mono"
+          >
+            X-Frame-Options</a
+          >
+          header isn't the cluprit. We recommend using
+          <span class="font-mono">localhost</span> to avoid this issue.
+        </p>
+      </div>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+        const resolution = document.querySelector("#resolution");
+        resolution.innerHTML = window.innerWidth + "x" + window.innerHeight;
+      });
+    </script>
+  </body>
+</html>
+<style is:global>
+  .breakpoint-test div {
+    @apply px-2 py-1 border bg-black text-white text-xs font-mono rounded;
+  }
+
+  .test > div {
+    @apply my-8;
+  }
+
+  .test > div > h2 {
+    @apply uppercase text-xs font-bold tracking-wide text-gray-400;
+  }
+</style>
