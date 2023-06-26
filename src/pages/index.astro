@@ -1,10 +1,5 @@
 ---
-import github from "../assets/github.svg";
-import landscape from "../assets/landscape.svg";
-import multi from "../assets/multi.svg";
-import portrait from "../assets/portrait.svg";
-import single from "../assets/single.svg";
-import wind from "../assets/wind.svg";
+import { Icon } from "astro-icon";
 ---
 
 <html>
@@ -21,7 +16,7 @@ import wind from "../assets/wind.svg";
       <!-- LOGO/TITLE -->
       <div>
         <a href="/" class="flex justify-start items-center">
-          <img src={wind.src} alt="Winded" class="h-6 mr-1" />
+          <Icon name="wind" alt="Winded" class="h-6 mr-1" />
           <h1 class="text-2xl font-bold">WINDED</h1>
         </a>
       </div>
@@ -118,8 +113,8 @@ import wind from "../assets/wind.svg";
               class="hidden peer"
               checked
             />
-            <img
-              src={single.src}
+            <Icon
+              name="single"
               alt="Single"
               class="rounded-l peer-checked:invert peer-checked:bg-white"
             />
@@ -132,8 +127,8 @@ import wind from "../assets/wind.svg";
               value="multi"
               class="hidden peer"
             />
-            <img
-              src={multi.src}
+            <Icon
+              name="multi"
               alt="Multiple"
               class="rounded-r peer-checked:invert peer-checked:bg-white"
             />
@@ -150,8 +145,8 @@ import wind from "../assets/wind.svg";
               class="hidden peer"
               checked
             />
-            <img
-              src={portrait.src}
+            <Icon
+              name="portrait"
               alt="Portrait"
               class="rounded-l peer-checked:invert peer-checked:bg-white"
             />
@@ -164,8 +159,8 @@ import wind from "../assets/wind.svg";
               value="landscape"
               class="hidden peer"
             />
-            <img
-              src={landscape.src}
+            <Icon
+              name="landscape"
               alt="Landscape"
               class="rounded-r peer-checked:invert peer-checked:bg-white"
             />
@@ -175,7 +170,7 @@ import wind from "../assets/wind.svg";
         <!-- TODO - SCALE -->
       </div>
       <a href="https://github.com/IntToDouble/winded">
-        <img src={github.src} alt="Github" class="h-6" />
+        <Icon name="github" class="h-6" />
       </a>
     </header>
     <div
@@ -198,7 +193,7 @@ import wind from "../assets/wind.svg";
     @apply inline-block border text-xs px-1.5 py-0.5 font-mono lowercase;
   }
 
-  input[type="radio"] + img {
+  input[type="radio"] + svg {
     @apply h-6 min-w-max p-1 border;
   }
 
