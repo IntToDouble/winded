@@ -10,7 +10,7 @@ _ChatGPT on why this is useful:_
 
 Though specifically created for Tailwind CSS, the preset breakpoints are valuable for almost any responsive application.
 
-<img width="1596" alt="image" style="border: 1px solid #ddd" src="https://github.com/IntToDouble/winded/assets/3053339/a9a6f731-32fa-4f7e-8f8a-368ffa2cefc7">
+![winded](https://github.com/IntToDouble/winded/assets/3053339/1a2e1684-7316-422d-8a37-25157e813b96)
 
 ## Breakpoints
 
