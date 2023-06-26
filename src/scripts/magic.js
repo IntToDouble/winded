@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   urlInput.value =
     localStorage.getItem("url") || "https://winded.inttodouble.com/test";
 
-  urlInput.addEventListener("change", (event) => () => {
+  urlInput.addEventListener("change", (event) => {
     localStorage.setItem("url", event.target.value);
     drawBreakpoints();
   });
