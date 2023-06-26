@@ -130,5 +130,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
   });
 
+  const helpButton = document.getElementById("help-button");
+  helpButton.addEventListener("click", () => {
+    urlInput.value = "https://winded.inttodouble.com/test";
+    drawBreakpoints();
+  });
+
   drawBreakpoints();
 });
