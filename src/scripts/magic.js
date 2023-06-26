@@ -87,7 +87,13 @@ const drawBreakpoints = () => {
 // Hello, DOM!
 document.addEventListener("DOMContentLoaded", (event) => {
   const urlInput = document.getElementById("url-input");
-  urlInput.addEventListener("change", (event) => drawBreakpoints());
+  urlInput.value =
+    localStorage.getItem("url") || "https://winded.inttodouble.com/test";
+
+  urlInput.addEventListener("change", (event) => () => {
+    localStorage.setItem("url", event.target.value);
+    drawBreakpoints();
+  });
 
   // Orientation
   const radios = document.querySelectorAll("input[name=orientation]");
