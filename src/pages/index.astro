@@ -36,7 +36,7 @@ import { Icon } from "astro-icon";
         </a>
       </div>
       <!-- CONTROLS -->
-      <div class="flex grow gap-x-4">
+      <div class="hidden sm:flex grow gap-x-4">
         <input
           id="url-input"
           type="text"
@@ -189,13 +189,20 @@ import { Icon } from "astro-icon";
     </header>
     <div
       id="panes-container"
-      class="flex w-full flex-wrap justify-center gap-x-8 gap-y-8 p-8"
+      class="hidden sm:flex w-full flex-wrap justify-center gap-x-8 gap-y-8 p-8"
     >
+    </div>
+    <div
+      class="sm:hidden text-center h-[calc(100vh-3rem)] flex items-center justify-center font-mono text-gray-400 text-xs"
+    >
+      WINDED needs room to breathe.
+      <br /><br />
+      Please give your browser some more pixels.
     </div>
     <footer
       class="flex justify-between mt-1.5 text-[0.6rem] font-mono text-gray-400 -mb-2"
     >
-        <a href="https://www.inttodouble.com/"> IntToDouble</a>
+      <a href="https://www.inttodouble.com/"> IntToDouble</a>
       <button id="help-button">Help</button>
     </footer>
     <script src="../scripts/magic.js"></script>
